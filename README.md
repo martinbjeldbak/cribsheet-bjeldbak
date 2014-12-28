@@ -5,6 +5,36 @@ My document class, cribsheetbjeldbak, extends the extarticle document class (whi
 
 This is my first attempt at making a class and I'm still learning what is valid to put in it. The fontspec and microtype packages bother me, since I want to keep my master file as clean as possible, but I also want to be able to use it with XeTeX, LuaTex, etc... I'm not sure how to tackle this problem yet.
 
+# Usage
+
+Clone this repository and copy the ``cribsheetbjeldbak.cls`` file to your LaTeX document root, and set it as your document class in your master file.
+
+Clone and move class file like so:
+```Shell
+$ git clone git@github.com:martinbmadsen/cribsheet-bjeldbak.git
+$ cp cribhseet-bjeldbak/cribsheetbjeldbak.cls ../
+```
+
+Then, include it in your master tex file. This could be ``master.tex`` or similar. A minimum working example (MWE):
+
+```TeX
+\documentclass{cribsheetbjeldbak}
+\usepackage{bookman}
+
+\title{CSE~XXX~Final~Crib~Sheet\\ \small 2014,~Standard~School}
+\author{Martin~Bjeldbak~Madsen\\PID:~\texttt{XXXXX}}
+
+\begin{document}
+\section{Intra-domain routing}\label{sec:intra}
+Admin sets edge costs. Methods to communicate network state: static,
+link-state, and distance vector.
+
+Bla bla, \cref{sec:intra} is a good section.
+\end{document}
+
+```
+
+
 # Features
 
 It adds and sets, among other things, the following:
